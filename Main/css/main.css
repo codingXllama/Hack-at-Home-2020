@@ -1,0 +1,351 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: rgb(10, 8, 8);
+  font-family: "Roboto", sans-serif;
+}
+
+#header {
+  display: flex;
+  /* flex-direction: column; */
+  min-height: 100vh;
+}
+
+/* Creating the classes for light and dark sections */
+.light-section {
+  background-color: f4f4f4;
+  color: #666;
+}
+
+.dark-section {
+  background-color: #282e34;
+  color: #ddd;
+}
+
+nav {
+  /* felx: grow shrink and setup */
+  flex: 1 1 auto;
+}
+
+#banner {
+  flex: 0 0 90%;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+/* Styling each item in the list  */
+nav ul li a {
+  text-decoration: none;
+  padding: 10px;
+  font-size: 20px;
+  display: block;
+  color: #3d3e4b;
+  background: transparent;
+
+  /* creating the transition property for the hover effect */
+  transition: color 1s ease, background 1s ease, padding 1s ease;
+}
+
+nav ul li a:hover {
+  color: rgb(255, 41, 41);
+  background: #3133446e;
+  padding-left: 2rem;
+}
+
+/* Styling to top area of the nav bar which is the logo area and the different tabs we need */
+/* This is needed for the menu button */
+#nav-top {
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px 20px 10px;
+  flex-wrap: wrap;
+}
+
+#nav-top h3 {
+  font-size: 2rem;
+  padding: 0.25em;
+  color: rgb(59, 59, 59);
+  transition: color 2s ease background 2s ease;
+}
+
+#nex {
+  color: rgb(74, 199, 126);
+}
+#nav-top h3:hover {
+  color: rgb(56, 56, 56);
+  background: rgba(71, 61, 212, 0.349);
+}
+
+#menu-btn {
+  padding: 3px;
+  cursor: pointer;
+  align-self: center;
+}
+
+#menu-btn:hover {
+  border-radius: 20%;
+}
+
+/* Making the nav bar responsive devices that are 690 wide and up */
+
+@media screen and (min-width: 690px) {
+  nav {
+    display: flex !important;
+    align-items: baseline;
+    flex-wrap: wrap;
+    padding: 0 20px;
+  }
+
+  #menu-btn {
+    display: none;
+  }
+
+  nav ul {
+    flex: 1 1 auto;
+    color: red;
+    flex-wrap: wrap;
+  }
+
+  nav ul li {
+    /* display: flex !important; */
+    flex: 1 0 125px;
+  }
+
+  nav ul a {
+    text-align: center;
+  }
+
+  nav ul a:hover {
+    padding: 10px !important;
+  }
+
+  #nav-top {
+    padding: 10px;
+  }
+}
+
+/*                                                         !END of responsive nav-bar */
+
+/*                                                        !? Styling the banner section                                  */
+
+#banner {
+  /* min-height: 50vh; */
+  background: linear-gradient(rgba(13, 81, 90, 0.863), rgba(116, 42, 42, 0.068)),
+    url(/Main/images/bg2.jpg);
+
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#banner-box {
+  border-radius: 5px;
+  /* font-family: sans-serif; */
+  text-align: center;
+  /* line-height: 1; */
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  max-width: 80%;
+  max-height: 60%;
+  padding: 1rem 2rem;
+}
+
+#banner-title {
+  color: #e7e7e7;
+  /* text-transform: capitalize; */
+  font-size: 3rem;
+}
+
+.banner-underline {
+  width: 30%;
+  margin: 0rem auto;
+  /* border: 2px solid rgb(255, 0, 0); */
+}
+
+.banner-subtitle {
+  color: #f5f5f5f5;
+  margin: 20px 0 40px 0;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+}
+
+#banner-box a {
+  display: inline-block;
+  padding: 0.25em;
+  font-size: 30px;
+  text-decoration: none;
+  color: #f5f5f5f5;
+  margin: 5px;
+  /* border: 2px solid #f5f5f5a9; */
+  border-radius: 3%;
+  transition: background 2s ease, border 0.5s ease;
+}
+
+i#arrowRight {
+  color: green;
+  border-radius: 25%;
+  /* margin: 10px */
+}
+
+#banner-box a#nex,
+#banner-box a#learnMore {
+  background: rgba(221, 21, 221, 0.637);
+}
+
+#banner-box a#admin {
+  background: rgba(199, 92, 85, 0.863);
+}
+
+#banner-box a:hover {
+  background: transparent;
+  border: 5px solid #31c945;
+}
+
+/* EDN OF BANNER STYLING */
+
+/* !!                                     STYLING THE EXPLORE SECTION                                                                     */
+
+/* Styling the Explore Title */
+
+.title {
+  text-align: center;
+  margin: 10px 0 40px 0;
+  cursor: pointer;
+}
+
+.title-text {
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #1d1d1d;
+}
+
+#Explore {
+  padding: 1rem;
+  background-color: rgb(230, 230, 230);
+  margin: 0;
+  /* flex-direction: column; */
+}
+
+.Explore {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.Explore .fa {
+  color: #b42a2a;
+  padding: 20px;
+  border-radius: 50%;
+  font-size: 60px;
+}
+
+.Explore h3 {
+  margin: 10px 0 15px 0;
+  font-size: 30px;
+  color: #b67b7b;
+}
+
+.Explore p {
+  line-height: 1.5em;
+  width: 75%;
+  margin: 0 auto;
+}
+
+/* EXPLORE section media queries for different screens sizes */
+
+@media screen and (min-width: 576px) {
+  .Explore-center {
+    display: flex;
+    justify-content: space-between;
+    max-width: 90vw;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  /* we want each item not to grow (0) and shrink(1) and the base value is done by => Creating 2 columns where each column takes 50% of the screen with 2em between them */
+  .Explore {
+    flex: 0 1 calc(50% - 1em);
+  }
+}
+
+/* For a bigger screen size */
+@media screen and (min-width: 776px) {
+  /* we want each item not to grow (0) and shrink(1) and the base value is done by => Creating 2 columns where each column takes 25% of the screen with 2em between them */
+  .Explore {
+    flex: 0 1 calc(15% - 1em);
+  }
+}
+
+/* End of EXPLORER SECTION */
+
+/* START OF Get Started SECTION */
+
+#app {
+  padding: 1rem;
+  background-color: rgb(216, 216, 216);
+  margin: 0;
+  /* flex-direction: column; */
+}
+
+.app {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.app .fa {
+  color: #b42a2a;
+  padding: 20px;
+  border-radius: 50%;
+  font-size: 60px;
+}
+
+.app h3 {
+  margin: 10px 0 15px 0;
+  font-size: 30px;
+  color: #51bebe;
+}
+
+.app p {
+  line-height: 1.5em;
+  width: 75%;
+  margin: 0 auto;
+}
+
+/* app section media queries for different screens sizes */
+
+@media screen and (min-width: 576px) {
+  .app-center {
+    display: flex;
+    justify-content: space-between;
+    max-width: 90vw;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  /* we want each item not to grow (0) and shrink(1) and the base value is done by => Creating 2 columns where each column takes 50% of the screen with 2em between them */
+  /* .app {
+    flex: 0 1 calc(50% - 1em);
+  } */
+}
+
+/* For a bigger screen size */
+@media screen and (min-width: 776px) {
+  /* we want each item not to grow (0) and shrink(1) and the base value is done by => Creating 2 columns where each column takes 25% of the screen with 2em between them */
+  .app {
+    flex: 0 1 calc(15% - 1em);
+  }
+}
+
+/* class for disabling any class needed */
+.blank {
+  display: none;
+}
