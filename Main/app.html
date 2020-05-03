@@ -13,7 +13,7 @@
 
         <!-- importing local css-->
         <link rel="stylesheet" href="./css/app.css">
-        <!-- <link rel="stylesheet" href="./css/font-awesome.css"> -->
+
 
 
     </head>
@@ -53,37 +53,55 @@
     <script src="js/app.js"></script>
 
     </body>
-<script>
-function countdown( elementName, minutes, seconds )
-{
-    var element, endTime, hours, mins, msLeft, time;
+    <script>
+        var happyArr = ['hug your mama',
+            'give sweet love to dadda',
+            'facetime the second contact in your recent',
+            'take a walk in the fresh air',
+            'read your favourite chapter',
+            "water your lil' plants",
+            'compliment yourself while looking at the mirror',
+            'run on the spot for 5 minutes',
+            "tell someone what you're learning",
+            'madidate for 7 minutes',
+            'draw your mood as an image on a piece of paper',
+            'eat that sweet',
+            'smile',
+            'crank the old tune',
+            'let that one thing go that you can never forgive yourself for !',
+            'a cup of water',
+            'smell the wet soil'
+        ];
 
-    function twoDigits( n )
-    {
-        return (n <= 9 ? "0" + n : n);
-    }
 
-    function updateTimer()
-    {
-        msLeft = endTime - (+new Date);
-        if ( msLeft < 1000 ) {
-            element.innerHTML = "Get Back To Work!";
-        } else {
-            time = new Date( msLeft );
-            hours = time.getUTCHours();
-            mins = time.getUTCMinutes();
-            element.innerHTML = (hours ? hours + ':' + twoDigits( mins ) : mins) + ':' + twoDigits( time.getUTCSeconds() );
-            setTimeout( updateTimer, time.getUTCMilliseconds() + 500 );
+        function countdown(elementName, minutes, seconds) {
+            var element, endTime, hours, mins, msLeft, time;
+
+            function twoDigits(n) {
+                return (n <= 9 ? "0" + n : n);
+            }
+
+            function updateTimer() {
+                msLeft = endTime - (+new Date);
+                if (msLeft < 1000) {
+                            
+                    element.innerHTML = happyArr[Math.floor(Math.random() * happyArr.length)];
+                } else {
+                    time = new Date(msLeft);
+                    hours = time.getUTCHours();
+                    mins = time.getUTCMinutes();
+                    element.innerHTML = (hours ? hours + ':' + twoDigits(mins) : mins) + ':' + twoDigits(time
+                        .getUTCSeconds());
+                    setTimeout(updateTimer, time.getUTCMilliseconds() + 500);
+                }
+            }
+
+            element = document.getElementById(elementName);
+            endTime = (+new Date) + 1000 * (60 * minutes + seconds) + 500;
+            updateTimer();
         }
-    }
 
-    element = document.getElementById( elementName );
-    endTime = (+new Date) + 1000 * (60*minutes + seconds) + 500;
-    updateTimer();
-}
+        countdown("timer", 0, 2);
+    </script>
 
-countdown( "timer", 120, 0 );
-
-
-</script>
 </html>

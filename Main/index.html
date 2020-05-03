@@ -26,101 +26,64 @@
 
                 <!-- Creating the nav-links -->
                 <ul id="links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#Explore">Learn More</a></li>
-                    <li><a href="#app">Get Started</a></li>
+                    <li><a onclick="rx()">Home</a></li>
+                    <li><a onclick="learnMore()">Learn More</a></li>
+                    <li><a onclick="app()">Get Started</a></li>
                     <!-- END of nav-section -->
                 </ul>
             </nav>
             <!-- Creating the banner (front page)-->
             <section id="banner">
-                <div id="banner-box">
+                <div id="banner-box" class="">
                     <!-- <div class="banner-underline"></div> -->
                     <h1 id="banner-title">Get All Your Work Done
                         <div class="banner-underline"></div> with <span id="nex"> get</span>Done</h1>
                     <br>
                     <br>
-                    <a href="#app" id="nex"><i id="arrowRight" class="fas fa-arrow-right"></i>&nbsp;Get Working</a>
+                    <a onclick="app()" id="nex"><i id="arrowRight" class="fas fa-arrow-right"></i>&nbsp;Get Working</a>
                 </div>
-            </section>
-        </header>
 
-        <!-- Explore Section -->
-        <section id="Explore" class="">
-            <!-- title -->
-            <div class="title">
-                <h1 class="title-text">Learn More</h1>
-            </div>
-            <!-- End of title -->
-            <div class="Explore-center">
-                <article class="Explore">
-                    <i class="fa fa-question"></i>
-                    <h3>About</h3>
-                    <p class='info'>A Productivity Application that Uses ML to predict the best time for getting work
-                        done
-                    </p>
-                </article>
-                <article class="Explore">
-                    <i class="fa fa-question"></i>
-                    <h3>Features</h3>
-                    <ol id="features">
-                        <li>Create Tasks</li>
-                        <li>Set Duration for tasks</li>
-                        <li>Complete a random happy activity</li>
-                        <li>Let ML find your productive time</li>
-                        <li>You Discover the rest!</li>
-                    </ol>
-                </article>
-                <article class="Explore">
-                    <i class="fa fa-question"></i>
-                    <h3>Why Bother</h3>
-                    <p>This app is targeted towards those who are trying to self improve and manage a work life balance.
-                    </p>
-                </article>
-            </div>
-        </section>
-        <!-- End of Explore Section -->
-
-
-        <!-- User Portal -->
-        <section id="userPortal" class="dark-section blank">
-            <!-- title -->
-            <div class="userPortal dark-section">
-                <h1 class="title-text">User Portal</h1>
-                <div class="userPortal-subSection">
-                    <h3 id="userPortal-subtitle">Login or Register to Make posts/interact with our Community!</h3>
+                <div id="Explore" class="">
+                    <div class="title">
+                        <h1 class="title-text">Learn More</h1>
+                    </div>
+                    <!-- End of title -->
+                    <div class="Explore-center">
+                        <article class="Explore">
+                            <i class="fa fa-question"></i>
+                            <h3>About</h3>
+                            <p class='info'>A Productivity Application that Uses ML to predict the best time for
+                                getting work
+                                done
+                            </p>
+                        </article>
+                        <article class="Explore">
+                            <i id="star" class="fa fa-star"></i>
+                            <h3>Features</h3>
+                            <ol id="features">
+                                <li>Create Tasks</li>
+                                <li>Set Duration for tasks</li>
+                                <li>Complete a random happy activity</li>
+                                <li>Let ML find your productive time</li>
+                                <li>You Discover the rest!</li>
+                            </ol>
+                        </article>
+                        <article class="Explore">
+                            <i class="fa fa-question"></i>
+                            <h3>Why Bother</h3>
+                            <p>This app is targeted towards those who are trying to self improve and manage a work
+                                life balance.
+                            </p>
+                        </article>
+                    </div>
                 </div>
-            </div>
-            <!-- End of title -->
-            <div class="user-center">
-                <article id="user-login">
-                    <form class="login-form">
-                        <input type="text" id="username" placeholder="Username">
-                        <input type="password" id="password" placeholder="Password">
-                    </form>
-                    <!-- Creating the submit button -->
-                    <a href="#" class="logIn">Login</a>
-
-                    <a href="signUp.html" target="_blank" class="singUp">Click <span id="here">here</span> to sign
-                        up!</a>
-
-                </article>
-            </div>
-        </section>
-        <!-- End of User portal -->
 
 
-
-
-        <!-- Get Started Section -->
-        <section id="app">
-            <section id="app" class="">
-                <!-- title -->
-                <div class="title">
-                    <h1 class="title-text">Demo</h1>
-                </div>
+                <!-- <div class="title">
+                    <h1 class="title-text">Make your goals a reality</h1>
+                </div> -->
                 <!-- End of title -->
-                <div class="app-center">
+                <div id="app" class="app-center">
                     <div class="container">
                         <div class="header">
                             <!-- adding the clear icon -->
@@ -128,6 +91,7 @@
                                 <i class="fas fa-sync"></i>
                                 <!-- <i class="fas fa-cog"></i> -->
                             </div>
+                            <div id="timer"></div>
 
                             <!-- adding the date -->
                             <div id="currentDate"></div>
@@ -142,15 +106,16 @@
 
                         <div class="add-to-do">
                             <i class="fas fa-plus-circle "></i>
-                            <input type="text" id="userInput" placeholder="Add a task">
+                            <input type="text" id="userInput" placeholder="Enter your mission">
                         </div>
-
-
+                        <div class="add-time">
+                            <i class="fas fa-clock"></i>
+                            <input type="text" id="userTime" placeholder="Enter the time duration " required>
+                        </div>
                     </div>
                 </div>
-
             </section>
-            <!-- End of Explore Section -->
+        </header>
 
 
 
@@ -159,11 +124,13 @@
 
 
 
-            <!-- Scripts -->
-            <script src="https://code.jquery.com/jquery-3.4.1.js"
-                integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
-            <script src="./js/app.js"></script>
+
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+        <script src="./js/app.js"></script>
 
 
 

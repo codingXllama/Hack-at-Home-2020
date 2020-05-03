@@ -5,6 +5,7 @@ const curDate = document.getElementById("currentDate");
 const curTime = document.getElementById("currentTime");
 const myList = document.getElementById("list");
 const userInput = document.getElementById("userInput");
+const userTime = document.getElementById("userTime");
 
 // Selecting All the required class names
 const check_Icon = "fa-check-circle";
@@ -140,3 +141,77 @@ myList.addEventListener("click", function (evt) {
   // adding the item to the localstorage ( this code must be added where the LIST array is updated )
   localStorage.setItem("TODO", JSON.stringify(LIST));
 });
+
+// Chaning the happyHr msg
+var happyArr = [
+  "hug your mama",
+  "donate a dollar to someone",
+  "facetime the second contact in your recent",
+  "take a walk in the fresh air",
+  "read your favourite chapter",
+  "water your lil' plants",
+  "compliment yourself while looking at the mirror",
+  "run on the spot for 5 minutes",
+  "tell someone what you're learning",
+  "madidate for 7 minutes",
+  "draw your mood as an image on a piece of paper",
+  "eat something sweet",
+  "smile",
+  "crank the old tune",
+  "let that one thing go that you can never forgive yourself for !",
+  "Drink a cup of water",
+  "smell something wet",
+];
+
+function countdown(elementName, minutes, seconds) {
+  var element, endTime, hours, mins, msLeft, time;
+
+  function twoDigits(n) {
+    return n <= 9 ? "0" + n : n;
+  }
+
+  function updateTimer() {
+    msLeft = endTime - +new Date();
+    if (msLeft < 1000) {
+      element.innerHTML = happyArr[Math.floor(Math.random() * happyArr.length)];
+    } else {
+      time = new Date(msLeft);
+      hours = time.getUTCHours();
+      mins = time.getUTCMinutes();
+      element.innerHTML =
+        (hours ? hours + ":" + twoDigits(mins) : mins) +
+        ":" +
+        twoDigits(time.getUTCSeconds());
+      setTimeout(updateTimer, time.getUTCMilliseconds() + 500);
+    }
+  }
+
+  element = document.getElementById(elementName);
+  endTime = +new Date() + 1000 * (60 * minutes + seconds) + 500;
+  updateTimer();
+}
+
+countdown("timer", 0, 10);
+
+document.getElementById("Explore").classList.add("blank");
+document.getElementById("app").classList.add("blank");
+document.getElementById("banner-box").style.display = "block";
+
+function rx() {
+  document.getElementById("Explore").classList.add("blank");
+  document.getElementById("app").style.display = "none";
+  document.getElementById("banner-box").style.display = "block";
+}
+
+function learnMore() {
+    document.getElementById("banner-box").style.display = "none";
+    document.getElementById("banner-box").style.background = "";
+  document.getElementById("app").style.display = "none";
+  document.getElementById("Explore").classList.remove("blank");
+}
+
+function app() {
+  document.getElementById("Explore").classList.add("blank");
+  document.getElementById("banner-box").style.display = "none";
+  document.getElementById("app").style.display = "block";
+}

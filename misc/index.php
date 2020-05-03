@@ -35,17 +35,17 @@ include('login/app_logic.php');
                     <li><a href="#Explore">Learn More</a></li>
                     <li><a href="#">Get Started</a></li>
                     <!-- END of nav-section -->
-                </ul> 
-            <ul>
-                <ul id="userPortal">
-                    <li id="login">
-                       <?php if(isset($_SESSION['username'])){
+                </ul>
+                <ul>
+                    <ul id="userPortal">
+                        <li id="login">
+                            <?php if(isset($_SESSION['username'])){
                               echo $_SESSION['username'];}
                         else {echo"<a href=login/signin.php>login</a></li>
                        <li id=singUp>
                         <a href=login/signup.php>sign up</a></li>";}?>
-                </ul>     
-          </nav>
+                    </ul>
+            </nav>
             <!-- Creating the banner (front page)-->
             <section id="banner">
                 <div id="banner-box">

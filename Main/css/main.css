@@ -28,11 +28,14 @@ body {
 
 nav {
   /* felx: grow shrink and setup */
-  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0 1 auto;
 }
 
 #banner {
-  flex: 0 0 90%;
+  flex-direction: column;
+  flex: 1 1 85%;
 }
 
 nav ul {
@@ -138,7 +141,7 @@ nav ul li a:hover {
 #banner {
   /* min-height: 50vh; */
   background: linear-gradient(rgba(13, 81, 90, 0.863), rgba(116, 42, 42, 0.068)),
-    url(/Main/images/bg2.jpg);
+    url(/Main/images/bg3.jpg);
 
   background-attachment: fixed;
   background-size: cover;
@@ -199,11 +202,7 @@ i#arrowRight {
 
 #banner-box a#nex,
 #banner-box a#learnMore {
-  background: rgba(221, 21, 221, 0.637);
-}
-
-#banner-box a#admin {
-  background: rgba(199, 92, 85, 0.863);
+  /* background: rgba(221, 21, 221, 0.637); */
 }
 
 #banner-box a:hover {
@@ -231,7 +230,7 @@ i#arrowRight {
 
 #Explore {
   padding: 1rem;
-  background-color: rgb(230, 230, 230);
+  background-color: rgba(252, 252, 252, 0.603);
   margin: 0;
   /* flex-direction: column; */
 }
@@ -241,8 +240,12 @@ i#arrowRight {
   margin: 1rem 0;
 }
 
+#star {
+  color: yellow;
+}
+
 .Explore .fa {
-  color: #b42a2a;
+  color: #2a88b4;
   padding: 20px;
   border-radius: 50%;
   font-size: 60px;
@@ -251,7 +254,7 @@ i#arrowRight {
 .Explore h3 {
   margin: 10px 0 15px 0;
   font-size: 30px;
-  color: #b67b7b;
+  color: #e64b4b;
 }
 
 .Explore p {
@@ -291,7 +294,7 @@ i#arrowRight {
 
 #app {
   padding: 1rem;
-  background-color: rgb(216, 216, 216);
+  /* background-color: rgb(216, 216, 216); */
   margin: 0;
   /* flex-direction: column; */
 }
