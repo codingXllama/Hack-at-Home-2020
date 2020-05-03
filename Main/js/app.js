@@ -51,6 +51,7 @@ const dateSettings = {
   day: "numeric",
   year: "numeric",
   hour: "numeric",
+  minute: "numeric",
 };
 
 // Displaying the current date
