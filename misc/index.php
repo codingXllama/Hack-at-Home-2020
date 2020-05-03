@@ -35,12 +35,21 @@ include('login/app_logic.php');
                     <li><a href="#Explore">Learn More</a></li>
                     <li><a href="#">Get Started</a></li>
                     <!-- END of nav-section -->
+<<<<<<< HEAD:misc/index.php
                 </ul>
                 <ul>
                     <ul id="userPortal">
                         <li id="login">
                             <?php if(isset($_SESSION['username'])){
                               echo $_SESSION['username'];}
+=======
+                </ul> 
+            <ul>
+                <ul id="userPortal">
+                    <li id="login">
+                       <?php if(isset($_SESSION['username'])){
+                              echo "hey, ".$_SESSION['username'];}
+>>>>>>> e5ae56ae74ab308ecdef0dc83dd052b3c6dc5485:index.php
                         else {echo"<a href=login/signin.php>login</a></li>
                        <li id=singUp>
                         <a href=login/signup.php>sign up</a></li>";}?>
