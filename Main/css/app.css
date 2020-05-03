@@ -54,6 +54,14 @@ body {
   font-size: 25px;
   font-family: "Roboto", sans-serif;
 }
+#timer {
+  position: absolute;
+  bottom: 40px;
+  left: 10px;
+  color: #fff;
+  font-size: 25px;
+  font-family: "Roboto", sans-serif;
+}
 
 #currentTime {
   position: absolute;
