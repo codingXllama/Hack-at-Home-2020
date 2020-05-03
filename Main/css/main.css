@@ -141,7 +141,7 @@ nav ul li a:hover {
 #banner {
   /* min-height: 50vh; */
   background: linear-gradient(rgba(13, 81, 90, 0.863), rgba(116, 42, 42, 0.068)),
-    url(/Main/images/bg3.jpg);
+    url(../images/bg3.jpg);
 
   background-attachment: fixed;
   background-size: cover;
