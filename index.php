@@ -40,7 +40,7 @@ include('login/app_logic.php');
                 <ul id="userPortal">
                     <li id="login">
                        <?php if(isset($_SESSION['username'])){
-                              echo $_SESSION['username'];}
+                              echo "hey,".$_SESSION['username'];}
                         else {echo"<a href=login/signin.php>login</a></li>
                        <li id=singUp>
                         <a href=login/signup.php>sign up</a></li>";}?>
